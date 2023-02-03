@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class SC_FPSController : MonoBehaviour
+public class FPSController : MonoBehaviour
 {
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
@@ -17,6 +17,8 @@ public class SC_FPSController : MonoBehaviour
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
+
+    public Transform crouchingTransform;
 
     [HideInInspector]
     public bool canMove = true;
@@ -35,26 +37,17 @@ public class SC_FPSController : MonoBehaviour
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        
+
+
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+        //canMove = !Input.GetKey(KeyCode.C);
 
-        // Crouching functionality.
-        if (Input.GetKey(KeyCode.C))
-        {
-            canMove = false;
-            playerCamera.transform.localPosition = new Vector3(transform.localPosition.x, 0.9f, transform.localPosition.z);
-        }
-        else if (!canMove)
-        {
-            canMove = true;
-            playerCamera.transform.localPosition = new Vector3(transform.localPosition.x, 1.64f, transform.localPosition.z);
-        }
-        
+
         // Jumping functionality.
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
@@ -77,10 +70,21 @@ public class SC_FPSController : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
 
         // Player and Camera rotation
-
         rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        //float cameraHeight = !Input.GetKey(KeyCode.C) ? 0 : -0.8f;
+
+        if (Input.GetKey(KeyCode.C) && characterController.isGrounded)
+        {
+            crouchingTransform.localPosition = Vector3.Lerp(crouchingTransform.localPosition, new Vector3(crouchingTransform.localPosition.x, -0.8f, crouchingTransform.localPosition.z), 0.2f);
+            canMove = false;
+        }
+        else
+        {
+            crouchingTransform.localPosition = Vector3.Lerp(crouchingTransform.localPosition, new Vector3(crouchingTransform.localPosition.x, 0, crouchingTransform.localPosition.z), 0.2f);
+            canMove = true;
+        }
     }
 }
