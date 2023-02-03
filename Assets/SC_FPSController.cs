@@ -47,12 +47,12 @@ public class SC_FPSController : MonoBehaviour
         if (Input.GetKey(KeyCode.C))
         {
             canMove = false;
-            //playerCamera.transform.position = new Vector3(0f, 0.8f, 0f);
+            playerCamera.transform.localPosition = new Vector3(transform.localPosition.x, 0.9f, transform.localPosition.z);
         }
-        else
+        else if (!canMove)
         {
             canMove = true;
-            //playerCamera.transform.position = new Vector3(0f, 1.64f, 0f);
+            playerCamera.transform.localPosition = new Vector3(transform.localPosition.x, 1.64f, transform.localPosition.z);
         }
         
         // Jumping functionality.
