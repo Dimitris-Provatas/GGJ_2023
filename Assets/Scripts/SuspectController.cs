@@ -20,4 +20,9 @@ public class SuspectController : MonoBehaviour
   {
 
   }
+
+  void OnCollisionEnter(Collision other)
+  {
+    Debug.Log("AAAAAAAAAAAAAAAAAAAAA");
+  }
 }

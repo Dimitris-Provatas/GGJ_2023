@@ -18,4 +18,9 @@ public class ClueController : MonoBehaviour
   {
 
   }
+
+  void OnCollisionEnter(Collision other)
+  {
+    Debug.Log("AAAAAAAAAAAAAAAAAAAAA");
+  }
 }
