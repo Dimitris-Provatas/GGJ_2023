@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6f186060dac4b53bea638749677549, type: 3}
   m_Name: Test Clue 1
   m_EditorClassIdentifier: 
-  clue: 
+  name: Test Clue 1
+  clue: You are trash bro!
+  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   isFound: 0
