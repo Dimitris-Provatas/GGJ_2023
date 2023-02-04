@@ -1337,6 +1337,11 @@ PrefabInstance:
       propertyPath: Text
       value: 
       objectReference: {fileID: 1591466505}
+    - target: {fileID: 2199398104343555030, guid: cb38f5979a3044045b92f2153dc04cf1,
+        type: 3}
+      propertyPath: interactionTooltip
+      value: 
+      objectReference: {fileID: 1591466505}
     - target: {fileID: 4217961518763991400, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
       propertyPath: m_Name
