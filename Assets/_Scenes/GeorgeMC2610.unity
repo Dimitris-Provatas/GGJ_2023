@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 764530980}
   - component: {fileID: 764530983}
   - component: {fileID: 764530982}
+  - component: {fileID: 764530984}
   - component: {fileID: 764530981}
   m_Layer: 0
   m_Name: Note
@@ -749,6 +750,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764530979}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &764530984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764530979}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a203a6e2f1905d408340b2f19a32a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteInteractionTooltip: {fileID: 1679164210}
+  clueInteractionTooltip: {fileID: 1679164210}
 --- !u!1 &1077702445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,6 +1472,16 @@ PrefabInstance:
       propertyPath: interactionTooltip
       value: 
       objectReference: {fileID: 1591466505}
+    - target: {fileID: 2199398104343555030, guid: cb38f5979a3044045b92f2153dc04cf1,
+        type: 3}
+      propertyPath: clueInteractionTooltip
+      value: 
+      objectReference: {fileID: 1591466503}
+    - target: {fileID: 2199398104343555030, guid: cb38f5979a3044045b92f2153dc04cf1,
+        type: 3}
+      propertyPath: noteInteractionTooltip
+      value: 
+      objectReference: {fileID: 1591466503}
     - target: {fileID: 4217961518763991400, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
       propertyPath: m_Name

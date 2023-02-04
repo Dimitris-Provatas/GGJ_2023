@@ -33,6 +33,13 @@ public class GameManager : MonoBehaviour
   private void Update()
   {
     TickTimer();
+
+    if (Input.GetKey(KeyCode.P))
+    {
+      SwitchPause();
+      Debug.Log("Esc pressed");
+    }
+      
   }
 
   /// <summary>
@@ -44,6 +51,22 @@ public class GameManager : MonoBehaviour
     {
       timerCurrent += Time.deltaTime;
     }
+  }
+
+  private void SwitchPause()
+  {
+    // swap current game state.
+    if (currentGameState == GameState.PLAYING)
+      currentGameState = GameState.PAUSED;
+    else if (currentGameState == GameState.PAUSED)
+      currentGameState = GameState.PLAYING;
+    
+    // The player will be able to look if the current game state is playing.
+    Time.timeScale = currentGameState == GameState.PLAYING ? 1f : 0f;
+    Cursor.visible = currentGameState == GameState.PAUSED;
+
+    // Lock the look movement if the game is paused.
+    FPSController.instance.canLook = currentGameState == GameState.PLAYING;
   }
 
   private void TriggerLoseCondition()
