@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Note
+  - Clue
   layers:
   - Default
   - TransparentFX
