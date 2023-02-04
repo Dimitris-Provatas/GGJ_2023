@@ -11,6 +11,7 @@ public class NoteController : MonoBehaviour
     
     public TextMeshProUGUI Text;
     public bool LookingAtNote = false;
+    public bool HasOpenedNote = false;
     
     void Start()
     {
@@ -27,8 +28,17 @@ public class NoteController : MonoBehaviour
 
         // Enable/Disable the text that informs the player about being able to read a note.
         Text.enabled = LookingAtNote;
-        
-        
+
+        if (Input.GetKey(KeyCode.F) && LookingAtNote && !HasOpenedNote)
+        {
+            Debug.Log("You Opened the Note.");
+            HasOpenedNote = true;
+        }
+        else if (Input.GetKey(KeyCode.F) && LookingAtNote && HasOpenedNote)
+        {
+            Debug.Log("You Closed the Note.");
+            HasOpenedNote = false;
+        }
     }
     
     /// <summary>
