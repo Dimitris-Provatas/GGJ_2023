@@ -8,11 +8,16 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI gameStateText;
-    [SerializeField] private GameObject panel;
+
+    [Header("Panels")]
+    [SerializeField] private GameObject journalPanel;
+    [SerializeField] private GameObject orbiterPanel;
 
     [Header("Tabs")]
-    [SerializeField] private GameObject[] tabs;
-    [SerializeField] private Button[] buttons;
+    [SerializeField] private GameObject[] journalTabs;
+    [SerializeField] private Button[] journalButtons;
+
+    private GameObjectOrbiter orbiterInstance;
 
     // Singleton
     public static UIManager instance;
@@ -32,7 +37,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleJournalPanel()
     {
-        panel.SetActive(!panel.activeInHierarchy);
+        journalPanel.SetActive(!journalPanel.activeInHierarchy);
     }
 
     /// <summary>
@@ -41,11 +46,35 @@ public class UIManager : MonoBehaviour
     /// <param name="tab">Tab to enable.</param>
     public void GoToTab(GameObject tab)
     {
-        for(int i=0; i < tabs.Length; i++)
+        for(int i=0; i < journalTabs.Length; i++)
         {
-            tabs[i].SetActive(tabs[i].Equals(tab));
-            HandleButtonColorOnClick(buttons[i], tabs[i].Equals(tab));
+            journalTabs[i].SetActive(journalTabs[i].Equals(tab));
+            HandleButtonColorOnClick(journalButtons[i], journalTabs[i].Equals(tab));
         }
+    }
+
+    public void GoToJournal()
+    {
+        journalPanel.SetActive(true);
+        orbiterPanel.SetActive(false);
+
+        if(orbiterInstance != null)
+        {
+            Destroy(orbiterInstance);
+        }
+    }
+
+    public void GoToOrbiter(GameObject go)
+    {
+        journalPanel.SetActive(false);
+        orbiterPanel.SetActive(true);
+        orbiterInstance = orbiterPanel.AddComponent<GameObjectOrbiter>();
+        orbiterInstance.Init(go);
+    }
+
+    private void HandleButtonColorOnClick(Button button, bool currentlySelected)
+    {
+        button.GetComponent<TextMeshProUGUI>().color = currentlySelected ? new Color(1, 1, 1, 1f) : new Color(1,1,1,0.5f);
     }
 
     public void ShowLoseText()
@@ -58,10 +87,5 @@ public class UIManager : MonoBehaviour
     {
         gameStateText.enabled = true;
         gameStateText.text = "CORRECT";
-    }
-
-    private void HandleButtonColorOnClick(Button button, bool currentlySelected)
-    {
-        button.GetComponent<TextMeshProUGUI>().color = currentlySelected ? new Color(1, 1, 1, 0.5f) : new Color(1,1,1,1f);
     }
 }

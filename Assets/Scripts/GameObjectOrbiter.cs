@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class GameObjectOrbiter : MonoBehaviour
 {
-  public GameObject targetObject;
-
   const float minDistance = 1.5f;
   const float maxDistance = 5f;
 
@@ -11,13 +9,16 @@ public class GameObjectOrbiter : MonoBehaviour
   public float distance = 4f;
 
   private GameObject localObject;
-  private Vector2 prevMousePos;
 
-  // Start is called before the first frame update
-  void Start()
+  public void Init(GameObject targetObject)
   {
     localObject = Instantiate(targetObject, Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, distance)), Quaternion.identity);
   }
+
+    private void OnDestroy()
+    {
+        Destroy(localObject);
+    }
 
   // Update is called once per frame
   void Update()
