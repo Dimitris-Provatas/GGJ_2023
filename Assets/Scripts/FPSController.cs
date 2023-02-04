@@ -23,7 +23,7 @@ public class FPSController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
-    void Start()
+    private void Start()
     {
         characterController = GetComponent<CharacterController>();
 
@@ -32,7 +32,7 @@ public class FPSController : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void Update()
+    private void Update()
     {
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
