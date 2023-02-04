@@ -17,7 +17,7 @@ public class InteractController : MonoBehaviour
     private bool lookingAtDrawer = false;
     private bool hasOpenedNote = false;
 
-    void Update()
+    private void Update()
     {
         ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Physics.Raycast(ray, out hitData, 0.75f);
