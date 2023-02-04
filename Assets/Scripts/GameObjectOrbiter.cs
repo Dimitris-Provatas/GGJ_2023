@@ -22,28 +22,20 @@ public class GameObjectOrbiter : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    distance = Mathf.Clamp(distance + Input.mouseScrollDelta.y, minDistance, maxDistance);
-    localObject.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, distance));
-
-    if (Input.GetMouseButtonDown(0))
+    float scrollDelta = MouseInputWrapper.ScrollWheelDelta();
+    if (scrollDelta != 0f)
     {
-      prevMousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
-      return;
+      distance = Mathf.Clamp(distance + scrollDelta, minDistance, maxDistance);
+      localObject.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, distance));
     }
+
     if (Input.GetMouseButton(0))
     {
-      Vector2 newMousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+      Vector2 mousePosDelta = MouseInputWrapper.MousePositionDelta();
 
-      if (newMousePos == prevMousePos)
-      {
-        return;
-      }
+      if (mousePosDelta == Vector2.zero) return;
 
-      Vector2 mousePosDelta = prevMousePos - newMousePos;
       localObject.transform.Rotate(new Vector3(-mousePosDelta.y, mousePosDelta.x, 0f), Space.World);
-
-      prevMousePos = newMousePos;
     }
   }
 }
