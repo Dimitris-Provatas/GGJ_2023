@@ -3,35 +3,37 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-  public InventoryController instance;
-  public List<GameObject> clues;
+    public List<GameObject> clues;
 
-  public bool isInventoryOpen = false;
+    public bool isInventoryOpen = false;
 
-  void Start()
-  {
-    instance = this;
+    // Singleton
+    public static InventoryController instance;
 
-    isInventoryOpen = false;
-  }
-
-  void Update()
-  {
-    if (Input.GetKeyUp(KeyCode.Tab))
+    void Start()
     {
-      ToggleInventory();
+        // Singleton
+        instance = this;
+        isInventoryOpen = false;
     }
-  }
 
-  void ToggleInventory()
-  {
-    if (isInventoryOpen) { } else { }
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            ToggleInventory();
+        }
+    }
 
-    isInventoryOpen = !isInventoryOpen;
-  }
+    void ToggleInventory()
+    {
+        if (isInventoryOpen) { } else { }
 
-  public void AddClueToInventory(GameObject clue)
-  {
-    clues.Add(clue);
-  }
+        isInventoryOpen = !isInventoryOpen;
+    }
+
+    public void AddClueToInventory(GameObject clue)
+    {
+        clues.Add(clue);
+    }
 }

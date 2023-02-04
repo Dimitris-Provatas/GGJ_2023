@@ -31,13 +31,19 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         // TODO just for testing, move this to interaction manager/character controller
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && !orbiterPanel.activeInHierarchy)
             ToggleJournalPanel();
     }
 
     public void ToggleJournalPanel()
     {
         journalPanel.SetActive(!journalPanel.activeInHierarchy);
+
+        FPSController.instance.canLook = !journalPanel.activeInHierarchy;
+        FPSController.instance.lockMovement = journalPanel.activeInHierarchy;
+        Cursor.visible = journalPanel.activeInHierarchy;
+        Cursor.lockState = journalPanel.activeInHierarchy ? CursorLockMode.None : CursorLockMode.Locked;
+
     }
 
     /// <summary>

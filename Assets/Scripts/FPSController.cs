@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(InventoryController))]
 
 public class FPSController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class FPSController : MonoBehaviour
     public float jumpSpeed = 0f;
     public float gravity = 20.0f;
     public Camera playerCamera;
+    public Camera inventoryCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
 
@@ -20,8 +22,12 @@ public class FPSController : MonoBehaviour
 
     public Transform crouchingTransform;
 
+    public static FPSController instance;
+
     [HideInInspector]
-    public bool canMove = true;
+    public bool canMove = true; // for crouch locking
+    public bool lockMovement = false; // for journal locking
+    public bool canLook = true;
 
     private void Start()
     {
@@ -30,6 +36,8 @@ public class FPSController : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        instance = this;
     }
 
     private void Update()
@@ -41,8 +49,8 @@ public class FPSController : MonoBehaviour
 
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+        float curSpeedX = (canMove && !lockMovement) ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
+        float curSpeedY = (canMove && !lockMovement) ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
         //canMove = !Input.GetKey(KeyCode.C);
@@ -70,10 +78,14 @@ public class FPSController : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
 
         // Player and Camera rotation
-        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        if(canLook)
+        {
+            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+
         //float cameraHeight = !Input.GetKey(KeyCode.C) ? 0 : -0.8f;
 
         if (Input.GetKey(KeyCode.C) && characterController.isGrounded)
@@ -86,5 +98,9 @@ public class FPSController : MonoBehaviour
             crouchingTransform.localPosition = Vector3.Lerp(crouchingTransform.localPosition, new Vector3(crouchingTransform.localPosition.x, 0, crouchingTransform.localPosition.z), 0.2f);
             canMove = true;
         }
+
+        // Sync player and inventory camera
+        //inventoryCamera.transform.position = playerCamera.transform.position;
+        //inventoryCamera.transform.rotation = Quaternion.Euler(0, playerCamera.transform.eulerAngles.y, playerCamera.transform.eulerAngles.z);
     }
 }
