@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class GameManager : MonoBehaviour
   public GameState currentGameState;
   public enum GameState { PLAYING, PAUSED, WON, LOST };
 
+  public TextMeshProUGUI pauseMenu;
+
   // Singleton
   public static GameManager instance;
 
@@ -25,6 +29,9 @@ public class GameManager : MonoBehaviour
 
     // Initialize Game State
     currentGameState = GameState.PLAYING;
+    
+    // Remove Pause Label.
+    pauseMenu.enabled = false;
 
     // Singleton
     instance = this;
@@ -34,7 +41,7 @@ public class GameManager : MonoBehaviour
   {
     TickTimer();
 
-    if (Input.GetKey(KeyCode.P))
+    if (Input.GetKeyUp(KeyCode.P))
     {
       SwitchPause();
       Debug.Log("Esc pressed");
@@ -67,6 +74,9 @@ public class GameManager : MonoBehaviour
 
     // Lock the look movement if the game is paused.
     FPSController.instance.canLook = currentGameState == GameState.PLAYING;
+
+    // Show Paused if the game is paused.
+    pauseMenu.enabled = currentGameState == GameState.PAUSED;
   }
 
   private void TriggerLoseCondition()
