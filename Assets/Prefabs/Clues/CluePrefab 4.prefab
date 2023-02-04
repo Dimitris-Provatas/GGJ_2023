@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6768445292851336688}
+  - component: {fileID: 8156274685659814445}
   - component: {fileID: 5863805556510173669}
   - component: {fileID: 6109230709370055050}
   - component: {fileID: 1745747415397284325}
-  - component: {fileID: 8156274685659814445}
   m_Layer: 0
-  m_Name: CluePrefab
+  m_Name: CluePrefab 4
   m_TagString: Clue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,6 +35,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8156274685659814445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3061667017093455113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ed007bc42c34746b7beabe2575f855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueData: {fileID: 11400000, guid: 8e0cd5b8df00e1b49b8318c2890a1cf2, type: 2}
+  location: {x: 0, y: 0, z: 0}
+  meshFilter: {fileID: 0}
 --- !u!33 &5863805556510173669
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42,7 +57,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3061667017093455113}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 2408725927705819854, guid: 497f9e0994812694d8d28a6dfd1670dc, type: 3}
 --- !u!23 &6109230709370055050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -98,18 +113,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8156274685659814445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3061667017093455113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96ed007bc42c34746b7beabe2575f855, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clueData: {fileID: 11400000, guid: d5299602adb734cb89b10a758054848d, type: 2}
-  location: {x: 0, y: 0, z: 0}
-  meshFilter: {fileID: 0}

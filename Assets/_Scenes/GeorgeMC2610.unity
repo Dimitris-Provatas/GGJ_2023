@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 261.8028, g: 324.33075, b: 429.2505, a: 1}
+  m_IndirectSpecularColor: {r: 261.80054, g: 324.32776, b: 429.24692, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -764,6 +764,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteInteractionTooltip: {fileID: 1679164210}
   clueInteractionTooltip: {fileID: 1679164210}
+  pickedUpClueTooltip: {fileID: 0}
+  pickedupClueTooltipAnimator: {fileID: 0}
 --- !u!1 &1077702445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,7 +1526,7 @@ MonoBehaviour:
   timerCurrent: 0
   timerEnd: 0
   currentGameState: 0
-  PauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 1804742960}
 --- !u!4 &1917443975
 Transform:
   m_ObjectHideFlags: 0
