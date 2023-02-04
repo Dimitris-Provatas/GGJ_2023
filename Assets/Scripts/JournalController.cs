@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -16,9 +17,11 @@ public class JournalController : MonoBehaviour
   [SerializeField] private GameObject[] journalTabs;
   [SerializeField] private Button[] journalButtons;
 
-  private GameObject cluesButtonsGrid;
+  [SerializeField] private GameObject cluesButtonsGrid;
 
   private GameObjectOrbiter orbiterInstance;
+
+  private List<GameObject> cluesList = new List<GameObject>();
 
   // Singleton
   public static JournalController instance;
@@ -27,16 +30,15 @@ public class JournalController : MonoBehaviour
   {
     // Singleton
     instance = this;
+  }
 
-    gameStateText = GameObject.Find("Canvas/Game State Text").GetComponent<TextMeshProUGUI>();
+  void Update()
+  {
+    if (Input.GetKeyUp(KeyCode.Tab))
+    {
+      ToggleJournalPanel();
+    }
 
-    cluesButtonsGrid = GameObject.Find("Journal Inventory Tab/Viewport/Content/Grid");
-
-    journalPanel = GameObject.Find("Canvas/Journal Panel");
-    journalPanel.SetActive(false);
-
-    orbiterPanel = GameObject.Find("Canvas/Orbiter Panel");
-    orbiterPanel.SetActive(false);
   }
 
   public void ToggleJournalPanel()
@@ -85,15 +87,19 @@ public class JournalController : MonoBehaviour
 
   public void ClueWasFound(GameObject clueObject)
   {
-    ClueController clueController = clueObject.GetComponent<ClueController>();
+    cluesList.Add(clueObject);
+    int lastIndex = cluesList.Count - 1;
 
-    cluesButtonsGrid.SetActive(true);
+    ClueController clueController = clueObject.GetComponent<ClueController>();
+    // Destroy(clueObject);
+    clueObject.SetActive(false);
+
     GameObject buttonToAdd = Instantiate(clueButtonPrefab);
     buttonToAdd.transform.SetParent(cluesButtonsGrid.transform);
     buttonToAdd.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = clueController.clueData.name;
     buttonToAdd.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = clueController.clueData.clue;
-    buttonToAdd.GetComponent<Button>().onClick.AddListener(() => GoToOrbiter(clueObject));
-    cluesButtonsGrid.SetActive(false);
+
+    buttonToAdd.GetComponent<Button>().onClick.AddListener(() => GoToOrbiter(cluesList[lastIndex]));
   }
 
   private void HandleButtonColorOnClick(Button button, bool currentlySelected)

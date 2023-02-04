@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -303,8 +303,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1599919888}
+        m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
         m_MethodName: GoToTab
         m_Mode: 2
         m_Arguments:
@@ -314,7 +314,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!1 &456406602
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &456406603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -405,16 +405,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2199398104343555030, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
-      propertyPath: Text
-      value: 
-      objectReference: {fileID: 1229078424}
-    - target: {fileID: 2199398104343555030, guid: cb38f5979a3044045b92f2153dc04cf1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2199398104343555030, guid: cb38f5979a3044045b92f2153dc04cf1,
-        type: 3}
       propertyPath: clueInteractionTooltip
       value: 
       objectReference: {fileID: 1097973116}
@@ -423,11 +413,6 @@ PrefabInstance:
       propertyPath: noteInteractionTooltip
       value: 
       objectReference: {fileID: 1229078422}
-    - target: {fileID: 4217961518191298356, guid: cb38f5979a3044045b92f2153dc04cf1,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 55
-      objectReference: {fileID: 0}
     - target: {fileID: 4217961518763991400, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
       propertyPath: m_Name
@@ -495,26 +480,24 @@ PrefabInstance:
       objectReference: {fileID: 930051469}
     - target: {fileID: 7921090171599907537, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
-      propertyPath: buttonPrefab
+      propertyPath: journalPanel
       value: 
-      objectReference: {fileID: 1439889365643076756, guid: 28434b47893b44c09842c72c192844e2,
-        type: 3}
+      objectReference: {fileID: 456406602}
     - target: {fileID: 7921090171599907537, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
-      propertyPath: clueButtonPrefab
+      propertyPath: orbiterPanel
       value: 
-      objectReference: {fileID: 1439889365643076756, guid: 28434b47893b44c09842c72c192844e2,
-        type: 3}
+      objectReference: {fileID: 1957432156}
     - target: {fileID: 7921090171599907537, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
-      propertyPath: journalTabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: gameStateText
+      value: 
+      objectReference: {fileID: 1117281153}
     - target: {fileID: 7921090171599907537, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
-      propertyPath: journalButtons.Array.size
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: cluesButtonsGrid
+      value: 
+      objectReference: {fileID: 1223629429}
     - target: {fileID: 7921090171599907537, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
       propertyPath: journalTabs.Array.data[0]
@@ -605,75 +588,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &840687969
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3061667017093455113, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_Name
-      value: CluePrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7396c4e589c1645d388852b777935f93, type: 3}
 --- !u!1 &841533006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1276,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117281151}
   m_CullTransparentMesh: 1
+--- !u!1001 &1148128657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3061667017093455113, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_Name
+      value: CluePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768445292851336688, guid: 7396c4e589c1645d388852b777935f93,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7396c4e589c1645d388852b777935f93, type: 3}
 --- !u!1 &1223629429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,8 +1624,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1599919888}
+        m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
         m_MethodName: GoToTab
         m_Mode: 2
         m_Arguments:
@@ -1750,6 +1733,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258189066}
   m_CullTransparentMesh: 1
+--- !u!114 &1599919888 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7921090171599907537, guid: cb38f5979a3044045b92f2153dc04cf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 463780312}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6efb34b3d2f1efc4b8dd58eec577a5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1780713112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,8 +2160,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1599919888}
+        m_TargetAssemblyTypeName: JournalController, Assembly-CSharp
         m_MethodName: GoToJournal
         m_Mode: 1
         m_Arguments:
@@ -2531,7 +2526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1957432157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3680,7 +3675,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3911,7 +3906,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3989,9 +3984,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: -17}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7284430971668955150
 MonoBehaviour:
@@ -4071,7 +4066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000032687847}
+  m_AnchoredPosition: {x: 0, y: 0.00038605073}
   m_SizeDelta: {x: 0, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7284430971806925752
@@ -4148,9 +4143,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -17, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &7284430971806925759
 MonoBehaviour:
@@ -4255,9 +4250,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &7284430972555247089
 MonoBehaviour:
@@ -4303,7 +4298,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7284430971646430334}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9993859
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

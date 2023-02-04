@@ -24,7 +24,7 @@ public class InteractController : MonoBehaviour
     noteInteractionTooltip.SetActive(lookingAtNote);
     clueInteractionTooltip.SetActive(lookingAtClue);
 
-    if (Input.GetKey(KeyCode.F))
+    if (Input.GetKeyUp(KeyCode.F))
     {
       if (lookingAtNote)
       {
@@ -43,8 +43,7 @@ public class InteractController : MonoBehaviour
       }
       else if (lookingAtClue)
       {
-        InventoryController.instance.AddClueToInventory(hitData.collider.gameObject);
-        Destroy(hitData.collider.gameObject);
+        JournalController.instance.ClueWasFound(hitData.collider.gameObject);
       }
     }
   }

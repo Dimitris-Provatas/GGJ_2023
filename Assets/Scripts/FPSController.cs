@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-[RequireComponent(typeof(InventoryController))]
 [RequireComponent(typeof(JournalController))]
 
 public class FPSController : MonoBehaviour
