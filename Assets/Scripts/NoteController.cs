@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NoteController : MonoBehaviour
 {
     private Ray ray;
     private RaycastHit hitData;
+    
+    public TextMeshPro Text;
+    public bool LookingAtNote = false;
     
     void Start()
     {
@@ -16,9 +20,19 @@ public class NoteController : MonoBehaviour
     {
         FireRay();
         
-        if (hitData.collider != null && hitData.collider.name.StartsWith("Note"))
+        if (hitData.collider != null && hitData.collider.CompareTag("Note"))
         {
             Debug.Log("Found a note!");
+            LookingAtNote = true;
+        }
+        else
+        {
+            LookingAtNote = false;
+        }
+
+        if (LookingAtNote)
+        {
+            
         }
     }
     
