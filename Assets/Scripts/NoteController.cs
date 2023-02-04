@@ -23,7 +23,7 @@ public class NoteController : MonoBehaviour
     Physics.Raycast(ray, out hitData);
 
     // looking at a note is when the ray hits a GameObject with a tag of "Note".
-    lookingAtNote = (hitData.collider?.CompareTag("Note"));
+    lookingAtNote = (hitData.collider?.CompareTag("Note")) ?? false;
 
     // Enable/Disable the text that informs the player about being able to read a note.
     interactionTooltip.enabled = lookingAtNote;
@@ -42,7 +42,7 @@ public class NoteController : MonoBehaviour
       else
       {
         Debug.Log("You Closed the Note.");
-        HasOpenedNote = false;
+        hasOpenedNote = false;
         // TODO: Add code that re-enables player movement.
       }
     }
