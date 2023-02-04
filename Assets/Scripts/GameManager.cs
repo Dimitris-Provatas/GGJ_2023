@@ -41,12 +41,10 @@ public class GameManager : MonoBehaviour
   {
     TickTimer();
 
+    // TODO: Change this button to be ESC after testing.
     if (Input.GetKeyUp(KeyCode.P))
-    {
       SwitchPause();
-      Debug.Log("Esc pressed");
-    }
-      
+
   }
 
   /// <summary>
