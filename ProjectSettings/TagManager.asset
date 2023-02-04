@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Note
   - Clue
+  - Drawer
   layers:
   - Default
   - TransparentFX
