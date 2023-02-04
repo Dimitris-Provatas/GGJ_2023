@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class NoteController : MonoBehaviour
     private Ray ray;
     private RaycastHit hitData;
     
-    public TextMeshPro Text;
+    public TextMeshProUGUI Text;
     public bool LookingAtNote = false;
     
     void Start()
@@ -18,22 +19,16 @@ public class NoteController : MonoBehaviour
 
     void Update()
     {
+        // dray a Ray. Looking for "Note" tags with it.
         FireRay();
         
-        if (hitData.collider != null && hitData.collider.CompareTag("Note"))
-        {
-            Debug.Log("Found a note!");
-            LookingAtNote = true;
-        }
-        else
-        {
-            LookingAtNote = false;
-        }
+        // looking at a note is when the ray hits a GameObject with a tag of "Note".
+        LookingAtNote = (hitData.collider != null && hitData.collider.CompareTag("Note"));
 
-        if (LookingAtNote)
-        {
-            
-        }
+        // Enable/Disable the text that informs the player about being able to read a note.
+        Text.enabled = LookingAtNote;
+        
+        
     }
     
     /// <summary>
