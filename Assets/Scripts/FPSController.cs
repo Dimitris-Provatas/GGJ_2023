@@ -28,7 +28,28 @@ public class FPSController : MonoBehaviour
   public bool canMove = true; // for crouch locking
   public bool lockMovement = false; // for journal locking
   public bool canLook = true;
+  public bool canCrouch = true;
 
+  /// <summary>
+  /// Entirely freezes the player. Disables movement, mouse looking and crouching.
+  /// </summary>
+  public void FreezePlayer()
+  {
+    lockMovement = true;
+    canLook = false;
+    canCrouch = false;
+  }
+
+  /// <summary>
+  /// Re-enables movement for the player.
+  /// </summary>
+  public void UnfreezePlayer()
+  {
+    lockMovement = false;
+    canLook = true;
+    canCrouch = true;
+  }
+  
   private void Start()
   {
     characterController = GetComponent<CharacterController>();
@@ -88,7 +109,7 @@ public class FPSController : MonoBehaviour
 
     //float cameraHeight = !Input.GetKey(KeyCode.C) ? 0 : -0.8f;
 
-    if (Input.GetKey(KeyCode.C) && characterController.isGrounded)
+    if (Input.GetKey(KeyCode.C) && characterController.isGrounded && canCrouch)
     {
       crouchingTransform.localPosition = Vector3.Lerp(crouchingTransform.localPosition, new Vector3(crouchingTransform.localPosition.x, -0.8f, crouchingTransform.localPosition.z), 0.2f);
       canMove = false;
