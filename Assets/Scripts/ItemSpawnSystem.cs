@@ -68,9 +68,21 @@ public class ItemSpawnSystem : MonoBehaviour
             currentPrefab.AddComponent<MeshRenderer>();
             SphereCollider s = currentPrefab.AddComponent<SphereCollider>();
             s.radius = 0.25f;
-            currentPrefab.transform.localScale *= 1f;
+
             currentPrefab.tag = "Clue";
-            currentPrefab.AddComponent<ClueController>().clueData = clues_queue.Dequeue();
+
+            Clue clue = clues_queue.Dequeue();
+            currentPrefab.AddComponent<ClueController>().clueData = clue;
+
+            if (clue.name == "Cigars" || clue.name == "Map" || clue.name == "Gloves")
+                currentPrefab.transform.localScale = Vector3.one;
+            else if (clue.name == "Tie")
+                currentPrefab.transform.localScale = Vector3.one * 10f;
+            else if (clue.name == "Knife")
+                currentPrefab.transform.localScale = Vector3.one * 3f;
+            else if (clue.name == "Watch")
+                currentPrefab.transform.localScale = Vector3.one * 0.9f;
+
             Instantiate(currentPrefab, t.position, t.rotation);
         }
     }
