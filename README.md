@@ -28,7 +28,7 @@ This project was made in the [Athens](http://globalgamejamathens.gr/) site of [G
 
 ## Credits
 
-* Programmers: [Dimitris Provatas](https://github.com/Dimitris-Provatas/), Aimilios Seimenis, Giorgos Seimenis
+* Programmers: [Dimitris Provatas](https://github.com/Dimitris-Provatas/), Aimilios Seimenis, [Giorgos Seimenis](https://github.com/GeorgeMC2610/)
 * Artists: Vicky Sakellakou, Nikos Tziotis, Rhea Zarkadoula
 * Game & Level Design: [Nikolas Joukowski](https://github.com/Nickzouk)
 * Music & Sound Design: [Nikolas Platon](https://soundcloud.com/platon-music/)
@@ -37,7 +37,7 @@ External Assets Used:
 
 "Cigar" (https://skfb.ly/6t9Oy) by Escoly is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-(https://www.freepik.com/free-vector/damask-seamless-pattern-element-classical-luxury-old-fashioned-damask-ornament_4328331.htm#query=damask&position=0&from_view=keyword")[Image by GarryKillian] on Freepik
+[Image by GarryKillian](https://www.freepik.com/free-vector/damask-seamless-pattern-element-classical-luxury-old-fashioned-damask-ornament_4328331.htm#query=damask&position=0&from_view=keyword") on Freepik
 
 "Open Book about Magic" (https://skfb.ly/6Yvvq) by salo_nya is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
