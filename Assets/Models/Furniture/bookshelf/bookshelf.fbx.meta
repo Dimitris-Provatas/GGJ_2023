@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ebc83866ede1f64c84a7e45cb720cd0
+guid: 1863c00f2f3fe3c409fa5445092f9090
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,14 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: b6f3a420e543b0d4097939195ce12067, type: 2}
+      name: Material #25
+    second: {fileID: 2100000, guid: 421fba10f6a29a34ba16ba4ffbd1b45d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Painted Wood
-    second: {fileID: 7820654685448153998, guid: b8d695aff81fb774aa286098b8b20acc,
-      type: 3}
+      name: Material #27
+    second: {fileID: 2100000, guid: 421fba10f6a29a34ba16ba4ffbd1b45d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

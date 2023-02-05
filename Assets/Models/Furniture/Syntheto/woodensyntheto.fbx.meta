@@ -1,20 +1,9 @@
 fileFormatVersion: 2
-guid: 7ebc83866ede1f64c84a7e45cb720cd0
+guid: 35b24c45264a37a4baf967372d18d8a2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: b6f3a420e543b0d4097939195ce12067, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Painted Wood
-    second: {fileID: 7820654685448153998, guid: b8d695aff81fb774aa286098b8b20acc,
-      type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -58,7 +47,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
