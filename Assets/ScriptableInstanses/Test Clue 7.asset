@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6f186060dac4b53bea638749677549, type: 3}
   m_Name: Test Clue 7
   m_EditorClassIdentifier: 
-  name: Test Clue 7
-  clue: El Testeritos Grandes
-  mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  name: Glasses
+  clue: Glasses
+  mesh: {fileID: 3538712456934850711, guid: 33270f40e50876b4e95efa8942687c99, type: 3}
+  material: {fileID: 2100000, guid: 86411229a49d1a04d83c12e60650212f, type: 2}
   isFound: 0

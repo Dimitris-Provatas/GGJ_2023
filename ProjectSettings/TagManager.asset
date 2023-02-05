@@ -7,6 +7,7 @@ TagManager:
   - Note
   - Clue
   - Drawer
+  - Decision
   layers:
   - Default
   - TransparentFX

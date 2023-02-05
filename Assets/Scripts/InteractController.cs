@@ -15,7 +15,9 @@ public class InteractController : MonoBehaviour
     private bool lookingAtNote = false;
     private bool lookingAtClue = false;
     private bool lookingAtDrawer = false;
+    private bool lookingAtDecision = false;
     private bool hasOpenedNote = false;
+
 
     private void Update()
     {
@@ -27,6 +29,7 @@ public class InteractController : MonoBehaviour
         lookingAtNote = (hitData.collider?.CompareTag("Note")) ?? false;
         lookingAtClue = (hitData.collider?.CompareTag("Clue")) ?? false;
         lookingAtDrawer = (hitData.collider?.CompareTag("Drawer")) ?? false;
+        lookingAtDecision = (hitData.collider?.CompareTag("Decision")) ?? false;
 
         noteInteractionTooltip.SetActive(lookingAtNote);
         clueInteractionTooltip.SetActive(lookingAtClue);
@@ -69,6 +72,12 @@ public class InteractController : MonoBehaviour
                     d.Close();
                 else
                     d.Open();
+            }
+
+            else if (lookingAtDecision)
+            {
+                Debug.Log("Looking at decision");
+                PuzzleManager.instance.ToggleInteract();
             }
         }
     }
