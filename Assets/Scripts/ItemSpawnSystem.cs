@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ItemSpawnSystem : MonoBehaviour
 {
-    public GameObject[] prefabs;
+    public Clue[] clues;
     public Transform[] coordinates;
     public List<GameObject> spawnedPrefabs = new List<GameObject>();
 
@@ -45,22 +45,33 @@ public class ItemSpawnSystem : MonoBehaviour
 
     void Start()
     {
+        clues = PuzzleManager.instance.suspectCorrect.clues;
+
         // Save the positions and the prefabs to Queues
-        Queue<GameObject> prefabs_queue = Shuffle(prefabs);
+        Queue<Clue> clues_queue = Shuffle(clues);
         Queue<Transform> coordinates_queue = Shuffle(coordinates);
 
-        // Don't continue if there are more Prefabs than Possible Locations
+        /*// Don't continue if there are more Prefabs than Possible Locations
         if (coordinates_queue.Count < prefabs_queue.Count)
         {
             Debug.Log("There are less possible positions than prefabs. Please add more positions.");
             return;
-        }
+        }*/
 
         // Instantiate each prefab.
-        while (prefabs_queue.Count != 0)
+        while (clues_queue.Count != 0)
         {
             Transform t = coordinates_queue.Dequeue();
-            Instantiate(prefabs_queue.Dequeue(), t.position, t.rotation);
+
+            GameObject currentPrefab = new GameObject();
+            currentPrefab.AddComponent<MeshFilter>();
+            currentPrefab.AddComponent<MeshRenderer>();
+            SphereCollider s = currentPrefab.AddComponent<SphereCollider>();
+            s.radius = 0.25f;
+            currentPrefab.transform.localScale *= 1f;
+            currentPrefab.tag = "Clue";
+            currentPrefab.AddComponent<ClueController>().clueData = clues_queue.Dequeue();
+            Instantiate(currentPrefab, t.position, t.rotation);
         }
     }
 }
