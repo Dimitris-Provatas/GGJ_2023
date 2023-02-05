@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/_Scenes/GeorgeMC2610.unity
-    guid: be421487e0f3f884d9095dfa0ab47958
+  - enabled: 1
+    path: Assets/_Scenes/MainMenu.unity
+    guid: 1ee8558e30081884db683d037777576e
   m_configObjects: {}

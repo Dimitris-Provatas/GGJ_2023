@@ -91,4 +91,14 @@ public class GameManager : MonoBehaviour
     currentGameState = GameState.WON;
     JournalController.instance.ShowWinText();
   }
+
+  public void ButtonClickSound()
+  {
+    SoundManager.instance.PlaySoundEffect("click");
+  }
+
+  public void ButtonHoverSound()
+  {
+    SoundManager.instance.PlaySoundEffect("hover");
+  }
 }

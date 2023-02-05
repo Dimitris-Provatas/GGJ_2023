@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class SoundManager : MonoBehaviour
   void Awake()
   {
     instance = this;
+
+    if (SceneManager.GetActiveScene().buildIndex != 1) return;
 
     gramophoneAudioSource.clip = rootsThemeGramophone;
     gramophoneAudioSource.loop = true;

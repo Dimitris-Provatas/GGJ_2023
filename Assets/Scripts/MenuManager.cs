@@ -1,6 +1,3 @@
-using System.Security.AccessControl;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -90,5 +87,15 @@ public class MenuManager : MonoBehaviour
   public void Update()
   {
     AudioListener.volume = volumeSlider.value;
+  }
+
+  public void ButtonClickSound()
+  {
+    SoundManager.instance.PlaySoundEffect("click");
+  }
+
+  public void ButtonHoverSound()
+  {
+    SoundManager.instance.PlaySoundEffect("hover");
   }
 }
