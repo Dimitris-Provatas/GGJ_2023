@@ -47,6 +47,7 @@ public class JournalController : MonoBehaviour
 
     journalPanel.SetActive(!journalPanel.activeInHierarchy);
     SoundManager.instance.ToggleThemePlaying();
+    SoundManager.instance.PlaySoundEffect(journalPanel.activeInHierarchy ? "pageOpen" : "pageClose");
 
     FPSController.instance.canLook = !journalPanel.activeInHierarchy;
     FPSController.instance.lockMovement = journalPanel.activeInHierarchy;
@@ -64,6 +65,7 @@ public class JournalController : MonoBehaviour
     {
       journalTabs[i].SetActive(journalTabs[i].Equals(tab));
       HandleButtonColorOnClick(journalButtons[i], journalTabs[i].Equals(tab));
+      SoundManager.instance.PlaySoundEffect("pageOpen");
     }
   }
 

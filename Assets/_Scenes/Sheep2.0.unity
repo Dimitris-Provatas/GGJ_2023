@@ -326,11 +326,13 @@ MonoBehaviour:
   rootsThemeLose: {fileID: 8300000, guid: 15dabe3822fc6da49b11ff4b9b1b786d, type: 3}
   drawClose: {fileID: 8300000, guid: 813a68ad2a7d3f543aaf7395b0255b58, type: 3}
   drawOpen: {fileID: 8300000, guid: 4af119251b0b59d468b90e28c5872c98, type: 3}
+  pageOpen: {fileID: 8300000, guid: 826c9e802a00443c5b2f205851b8d8e7, type: 3}
+  pageClose: {fileID: 8300000, guid: f6e8da376af114f0d806a8e726a90a05, type: 3}
   fireplace: {fileID: 8300000, guid: 520bd4f95f05f544ead708aac9c85723, type: 3}
-  walkCarpet: {fileID: 8300000, guid: cf8ae2ee3143ab9458f00f4ce70b610d, type: 3}
-  walkWood: {fileID: 8300000, guid: f365f65a1afb0234d87590a46c9e2243, type: 3}
+  walkCarpet: {fileID: 8300000, guid: 6d0c1334c08e041e9b843f40fb5b05c5, type: 3}
+  walkWood: {fileID: 8300000, guid: 63246ed49eeba409ba001dd34b27b992, type: 3}
   easterEgg: {fileID: 8300000, guid: 166f85c930924364a8fad0d910cb9689, type: 3}
-  gramophoneAudioSource: {fileID: 1049564751}
+  gramophoneAudioSource: {fileID: 0}
   inspectorAudioSource: {fileID: 1049564751}
   soundEffectSource: {fileID: 463780314}
   ambientSoundSource: {fileID: 72295247}
