@@ -24,6 +24,8 @@ public class MenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        AudioListener.volume = 1;
+
         GetAvailableResolutions();
     }
 

@@ -7,7 +7,7 @@ using TMPro;
 public class PuzzleManager : MonoBehaviour
 {
     [Header("Suspects & Clues")]
-    public Clue[] inventory;
+    public List<Clue> inventory;
     public Suspect[] allSuspects;
     public Suspect suspectCorrect;
     public Suspect suspectSelected;
@@ -37,11 +37,18 @@ public class PuzzleManager : MonoBehaviour
         Cursor.lockState = panel.activeInHierarchy ? CursorLockMode.None : CursorLockMode.Locked;
 
         if (panel.activeInHierarchy)
+        {
             FPSController.instance.FreezePlayer();
+            SoundManager.instance.PlaySoundEffect("pageOpen");
+        }
         else
+        {
             FPSController.instance.UnfreezePlayer();
+            SoundManager.instance.PlaySoundEffect("pageClose");
+        }
 
-        if(inventory.Length < 4)
+
+        if(inventory.Count < 4)
             statusText.text = "Can't choose a suspect just yet. I need to find more clues.";
         else
             statusText.text = "Who can it be now?";
@@ -51,13 +58,13 @@ public class PuzzleManager : MonoBehaviour
 
     public bool AllCluesAreCorrect()
     {
-        //return inventory.Equals(suspectSelected.clues) && suspectCorrect.Equals(suspectSelected);
-        return suspectCorrect.Equals(suspectSelected);
+        return inventory.Equals(suspectSelected.clues) && suspectCorrect.Equals(suspectSelected);
+        //return suspectCorrect.Equals(suspectSelected);
     }
 
     public void SelectSuspect(Suspect sus)
     {
-        if (inventory.Length < 4)
+        if (inventory.Count < 4)
         {
             statusText.text = "Can't choose a suspect just yet. I need to find more clues.";
         }

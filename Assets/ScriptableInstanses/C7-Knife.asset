@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6f186060dac4b53bea638749677549, type: 3}
   m_Name: C7-Knife
   m_EditorClassIdentifier: 
-  name: Glasses
+  name: Knife
   clue: Glasses
-  mesh: {fileID: 3538712456934850711, guid: 33270f40e50876b4e95efa8942687c99, type: 3}
-  material: {fileID: 2100000, guid: 86411229a49d1a04d83c12e60650212f, type: 2}
+  mesh: {fileID: 7233159054065966114, guid: 0e86aa01b5f484a41ac3ecaed6f4648f, type: 3}
+  material: {fileID: 2100000, guid: 1a9ffbbf5e14a1f44a4fdb56cf3b9768, type: 2}
   isFound: 0

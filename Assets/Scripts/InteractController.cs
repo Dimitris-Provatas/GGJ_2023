@@ -61,6 +61,7 @@ public class InteractController : MonoBehaviour
       if (lookingAtClue)
       {
         JournalController.instance.ClueWasFound(hitData.collider.gameObject);
+        PuzzleManager.instance.inventory.Add(hitData.collider.gameObject.GetComponent<ClueController>().clueData);
         pickedupClueTooltipAnimator.SetTrigger("ClueTrigger");
         SoundManager.instance.PlaySoundEffect("pickUp");
       }
@@ -82,7 +83,6 @@ public class InteractController : MonoBehaviour
       {
         Debug.Log("Looking at decision");
         PuzzleManager.instance.ToggleInteract();
-        SoundManager.instance.PlaySoundEffect("bookFlip");
       }
     }
   }

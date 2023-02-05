@@ -33,8 +33,7 @@ public class Drawer : MonoBehaviour
         if (gameObject.name.Contains("drawer"))
             SoundManager.instance.PlaySoundEffect("drawClose");
         else
-
-        SoundManager.instance.PlaySoundEffect("closeDrawer");
+            SoundManager.instance.PlaySoundEffect("closeDrawer");
         //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.45f);
     }
 }
