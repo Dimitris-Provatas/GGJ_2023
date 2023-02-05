@@ -47,16 +47,19 @@ public class SoundManager : MonoBehaviour
     gramophoneAudioSource.loop = true;
     gramophoneAudioSource.playOnAwake = true;
     gramophoneAudioSource.mute = false;
+    //gramophoneAudioSource.mute = false;
 
     inspectorAudioSource.clip = rootsThemeInspector;
     inspectorAudioSource.loop = true;
     inspectorAudioSource.playOnAwake = true;
     inspectorAudioSource.mute = true;
+    inspectorAudioSource.Play();
 
     ambientSoundSource.clip = ambient;
     ambientSoundSource.loop = true;
     ambientSoundSource.playOnAwake = true;
     ambientSoundSource.mute = false;
+    ambientSoundSource.Play();
 
     stepSoundSource.clip = walkWood;
   }
@@ -84,6 +87,28 @@ public class SoundManager : MonoBehaviour
       inspectorAudioSource.mute = true;
       ambientSoundSource.mute = false;
     }
+  }
+  
+  public void PlayWinSound()
+  {
+    foreach (AudioSource src in FindObjectsOfType<AudioSource>())
+    {
+      src.Stop();
+    }
+    
+    ambientSoundSource.clip = rootsThemeWin;
+    ambientSoundSource.Play();
+  }
+  
+  public void PlayLoseSound()
+  {
+    foreach (AudioSource src in FindObjectsOfType<AudioSource>())
+    {
+      src.Stop();
+    }
+    
+    ambientSoundSource.clip = rootsThemeLose;
+    ambientSoundSource.Play();
   }
 
   public void PlaySoundEffect(string soundEffectName)

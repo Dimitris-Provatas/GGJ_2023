@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -58,8 +59,7 @@ public class PuzzleManager : MonoBehaviour
 
     public bool AllCluesAreCorrect()
     {
-        return inventory.Equals(suspectSelected.clues) && suspectCorrect.Equals(suspectSelected);
-        //return suspectCorrect.Equals(suspectSelected);
+        return suspectCorrect.Equals(suspectSelected);
     }
 
     public void SelectSuspect(Suspect sus)

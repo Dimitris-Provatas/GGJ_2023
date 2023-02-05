@@ -1,3 +1,4 @@
+using System;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
@@ -20,6 +21,13 @@ public class InteractController : MonoBehaviour
     private bool lookingAtDecision = false;
     private bool hasOpenedNote = false;
 
+    public static InteractController instance;
+
+    private void Start()
+    {
+        instance = this;
+    }
+
     private void Update()
     {
         ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
@@ -33,11 +41,12 @@ public class InteractController : MonoBehaviour
         lookingAtDecision = (hitData.collider?.CompareTag("Decision")) ?? false;
 
         /* noteInteractionTooltip.SetActive(lookingAtNote); */
-        clueInteractionTooltip.SetActive(lookingAtClue);
-        drawerInteractionTooltip.SetActive(lookingAtDrawer);
-        decisionInteractionTooltip.SetActive(lookingAtDecision);
+        clueInteractionTooltip.SetActive(lookingAtClue && GameManager.instance.GetIsPlaying());
+        drawerInteractionTooltip.SetActive(lookingAtDrawer && GameManager.instance.GetIsPlaying());
+        decisionInteractionTooltip.SetActive(lookingAtDecision && GameManager.instance.GetIsPlaying());
 
-        if (Input.GetKeyUp(KeyCode.F))
+
+            if (Input.GetKeyUp(KeyCode.F))
         {
       /* // is the player looking at a note? */
                 /* if (lookingAtNote) */

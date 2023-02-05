@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour
             SwitchPause();
     }
 
+    public bool GetIsPlaying()
+    {
+        return currentGameState == GameState.PLAYING;
+    }
+
     /// <summary>
     /// Tick the timer if active and before its end.
     /// </summary>
@@ -102,5 +107,10 @@ public class GameManager : MonoBehaviour
     public void ButtonHoverSound()
     {
         SoundManager.instance.PlaySoundEffect("hover");
+    }
+
+    public void BackToMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

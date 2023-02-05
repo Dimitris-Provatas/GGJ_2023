@@ -114,13 +114,20 @@ public class JournalController : MonoBehaviour
     public void ShowLoseText()
     {
         blackPanel.SetActive(true);
+        SoundManager.instance.PlayLoseSound();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         gameStateText.enabled = true;
         gameStateText.text = "As you step outside the old house, you can't help but feel a sense of defeat. Despite your best efforts, the mystery of your unknown father remains unsolved. You didn't find the answers you sought, but the journey has changed you nonetheless. The cryptic clues, the forgotten memories, and the unknown twists and turns have left their mark, and you know that the search for answers will continue, even if the truth remains elusive for now.";
     }
 
     public void ShowWinText()
     {
+        blackPanel.SetActive(true);
         gameStateText.enabled = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SoundManager.instance.PlayWinSound();
         gameStateText.text = "All the pieces have fallen into place, and the mystery that once seemed unsolvable has been solved. The journey was long and challenging, but the reward is worth it all.You stand in awe, surrounded by the memories of your father, feeling a sense of closure and belonging.You now know who you truly are and where you come from, and the world will never seem quite the same again.";
     }
 }
