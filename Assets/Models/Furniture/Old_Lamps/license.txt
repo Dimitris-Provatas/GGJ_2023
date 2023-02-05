@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old Lamps
+* source:	https://sketchfab.com/3d-models/old-lamps-30bdc5e74f074beb9684275adaa33f91
+* author:	Azusa (https://sketchfab.com/azusanyan1992)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old Lamps" (https://sketchfab.com/3d-models/old-lamps-30bdc5e74f074beb9684275adaa33f91) by Azusa (https://sketchfab.com/azusanyan1992) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

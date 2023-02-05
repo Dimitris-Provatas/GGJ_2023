@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: ee718e8d1bfe9de46b3ef6df3e6859d6
+guid: 4bc840d18e9b2e142a9e40c60d3e7028
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tapestry_Fabric
+    second: {fileID: 2100000, guid: 210265e9d529aae489f77bde1a507cdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tapestry_Wood
+    second: {fileID: 2100000, guid: 1d560b9b9fae7d140b65ed1938621a99, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
