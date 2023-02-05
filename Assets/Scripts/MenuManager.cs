@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour
   public Resolution[] resolutions;
   public TMP_Dropdown resolutionDropdown;
   public Slider volumeSlider;
+  public Toggle fullScreenToggle;
+  public Toggle vsyncToggle;
 
   public int currentRes;
   public bool fullScreen;
@@ -33,6 +35,8 @@ public class MenuManager : MonoBehaviour
     {
       resolutionDropdown.options.Add(new TMP_Dropdown.OptionData(resolution.ToString()));
     }
+    
+    resolutionDropdown.value = resolutionDropdown.options.Count-1;
   }
 
   public void BackToMenu()
@@ -68,7 +72,16 @@ public class MenuManager : MonoBehaviour
 
   public void ToggleFullscreen()
   {
-    Screen.fullScreen = !Screen.fullScreen;
+    fullScreen = !fullScreen;
+
+    if (fullScreen)
+    {
+      Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+    }
+    else
+    {
+      Screen.fullScreenMode = FullScreenMode.Windowed;
+    }
   }
 
   public void ToggleVSync()
@@ -81,7 +94,8 @@ public class MenuManager : MonoBehaviour
 
   public void ApplySettings()
   {
-    Screen.SetResolution(resolutions[currentRes].width, resolutions[currentRes].height, fullScreen);
+    Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height,
+      Screen.fullScreen);
   }
 
   public void Update()

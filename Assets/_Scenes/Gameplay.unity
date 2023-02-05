@@ -8142,6 +8142,51 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+--- !u!1 &1555842508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555842509}
+  - component: {fileID: 1555842510}
+  m_Layer: 0
+  m_Name: Tzaki Box Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1555842509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555842508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.63471, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2043022270}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1555842510
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555842508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 5, z: 2}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &1572815848
 GameObject:
   m_ObjectHideFlags: 0
@@ -9060,6 +9105,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d16f1ff39b86cb14e8699b55d5c9cdc9, type: 3}
+--- !u!1 &1826831476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1969118219731483860, guid: d16f1ff39b86cb14e8699b55d5c9cdc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1826831475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1826831477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826831476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.94, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &1850031542
 GameObject:
   m_ObjectHideFlags: 0
@@ -10082,6 +10146,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e32f9e1b8bd2b8640b20451e22d20558, type: 3}
+--- !u!4 &2043022270 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1207066941659338934, guid: e32f9e1b8bd2b8640b20451e22d20558,
+    type: 3}
+  m_PrefabInstance: {fileID: 2043022269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2050361307
 PrefabInstance:
   m_ObjectHideFlags: 0

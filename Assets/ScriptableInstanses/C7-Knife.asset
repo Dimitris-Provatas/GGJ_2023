@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C7-Knife
   m_EditorClassIdentifier: 
   name: Knife
-  clue: Glasses
+  clue: Has a knife.
   mesh: {fileID: 7233159054065966114, guid: 0e86aa01b5f484a41ac3ecaed6f4648f, type: 3}
   material: {fileID: 2100000, guid: 1a9ffbbf5e14a1f44a4fdb56cf3b9768, type: 2}
   isFound: 0
