@@ -28,7 +28,7 @@ This project was made in the [Athens](http://globalgamejamathens.gr/) site of [G
 
 ## Credits
 
-* Programmers: [Dimitris Provatas](https://github.com/Dimitris-Provatas/), Aimilios Seimenis, [Giorgos Seimenis](https://github.com/GeorgeMC2610/)
+* Programmers: [Dimitris Provatas](https://github.com/Dimitris-Provatas/), [Aimilios Seimenis](https://github.com/aemiliu5/), [Giorgos Seimenis](https://github.com/GeorgeMC2610/)
 * Artists: Vicky Sakellakou, Nikos Tziotis, Rhea Zarkadoula
 * Game & Level Design: [Nikolas Joukowski](https://github.com/Nickzouk)
 * Music & Sound Design: [Nikolas Platon](https://soundcloud.com/platon-music/)
