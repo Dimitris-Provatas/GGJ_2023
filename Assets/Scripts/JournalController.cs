@@ -10,7 +10,7 @@ public class JournalController : MonoBehaviour
   [SerializeField] private GameObject clueButtonPrefab;
 
   [Header("Panels")]
-  [SerializeField] private GameObject journalPanel;
+  public GameObject journalPanel;
   [SerializeField] private GameObject orbiterPanel;
 
   [Header("Tabs")]
@@ -46,6 +46,7 @@ public class JournalController : MonoBehaviour
     if (orbiterPanel.activeInHierarchy) return;
 
     journalPanel.SetActive(!journalPanel.activeInHierarchy);
+    SoundManager.instance.ToggleThemePlaying();
 
     FPSController.instance.canLook = !journalPanel.activeInHierarchy;
     FPSController.instance.lockMovement = journalPanel.activeInHierarchy;

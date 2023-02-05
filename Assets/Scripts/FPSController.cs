@@ -21,6 +21,7 @@ public class FPSController : MonoBehaviour
   float rotationX = 0;
 
   public Transform crouchingTransform;
+  public LayerMask groundLayers;
 
   public static FPSController instance;
 
@@ -29,6 +30,8 @@ public class FPSController : MonoBehaviour
   public bool lockMovement = false; // for journal locking
   public bool canLook = true;
   public bool canCrouch = true;
+
+  private RaycastHit hitData;
 
   /// <summary>
   /// Entirely freezes the player. Disables movement, mouse looking and crouching.
@@ -49,7 +52,7 @@ public class FPSController : MonoBehaviour
     canLook = true;
     canCrouch = true;
   }
-  
+
   private void Start()
   {
     characterController = GetComponent<CharacterController>();
@@ -76,7 +79,6 @@ public class FPSController : MonoBehaviour
     moveDirection = (forward * curSpeedX) + (right * curSpeedY);
     //canMove = !Input.GetKey(KeyCode.C);
 
-
     // Jumping functionality.
     if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
     {
@@ -97,6 +99,13 @@ public class FPSController : MonoBehaviour
 
     // Move the controller
     characterController.Move(moveDirection * Time.deltaTime);
+
+    if (canMove && moveDirection != Vector3.zero)
+    {
+      Physics.Raycast(transform.position, Vector3.down, out hitData, 2f, groundLayers);
+
+      SoundManager.instance.PlayWalkingSound(hitData.transform.gameObject.layer == LayerMask.NameToLayer("groundWood"));
+    }
 
     // Player and Camera rotation
     if (canLook)
