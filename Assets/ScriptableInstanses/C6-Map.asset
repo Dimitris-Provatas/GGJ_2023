@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f6f186060dac4b53bea638749677549, type: 3}
-  m_Name: Test Clue 4
+  m_Name: C6-Map
   m_EditorClassIdentifier: 
-  name: Test Clue 4
-  clue: Ludicrous!
-  mesh: {fileID: 3859192021068367919, guid: aac558ea434f2794a9c6a8696f9b1130, type: 3}
+  name: Map
+  clue: Has a map.
+  mesh: {fileID: 4745827956446670323, guid: 69aaaa974cf79b6498ce63b340997478, type: 3}
+  material: {fileID: 2100000, guid: 03296d7b9a24d47418d3a1bf873bfd5c, type: 2}
   isFound: 0

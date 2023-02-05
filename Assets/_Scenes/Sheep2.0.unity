@@ -311,25 +311,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7355cc71f65c44a398c349bb6a65daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambient: {fileID: 8300000, guid: 2b4cecb9e00d44678938f9b96399f83d, type: 3}
-  click: {fileID: 8300000, guid: 5be941393263146a08d1fe5d57a428b6, type: 3}
-  closeDrawer: {fileID: 8300000, guid: a1dc1e63fe0574147a5b2662f29ba844, type: 3}
-  hover: {fileID: 8300000, guid: c590ce363fb2948ef8ee723d62890dfb, type: 3}
-  openDrawer: {fileID: 8300000, guid: 6576a20ff416f4825bb4f35b98d168d7, type: 3}
-  pickUp: {fileID: 8300000, guid: 4b5e08312d353494c937700c6a1f9b62, type: 3}
-  putItem: {fileID: 8300000, guid: 232317dacd1e843529a5650602610eec, type: 3}
-  rootsTheme: {fileID: 8300000, guid: 2f962e890ce124e6db3cb0629120b94a, type: 3}
-  rootsThemeInspector: {fileID: 8300000, guid: 97a37b879158c4032adedf0ec5f26973, type: 3}
-  rootsThemeGramophone: {fileID: 8300000, guid: e70a045ff98174f5ca1ab5009bd9ee3d,
+  ambient: {fileID: 8300000, guid: e3e9a08943e48c7449c4de39c5c1bf76, type: 3}
+  click: {fileID: 8300000, guid: b5cfdd28fb3f8e24b8354e301e4a60c9, type: 3}
+  closeDrawer: {fileID: 8300000, guid: 60206748c462c434292a06fd1527df95, type: 3}
+  hover: {fileID: 8300000, guid: de0829cf9e3deac48bc425bd7b47d72d, type: 3}
+  openDrawer: {fileID: 8300000, guid: ffe193b1bb08ca44a818af0e55c2e639, type: 3}
+  pickUp: {fileID: 8300000, guid: 3d7c11a7410c00148a4cb1af6837b0e4, type: 3}
+  putItem: {fileID: 8300000, guid: cc8698073511bd8448620a8e83ed426a, type: 3}
+  rootsTheme: {fileID: 8300000, guid: acc1b3fbb9a50274b95d6009ee3f91df, type: 3}
+  rootsThemeInspector: {fileID: 8300000, guid: ecda87cedbdc26d4e9f6c6bcbd5361e7, type: 3}
+  rootsThemeGramophone: {fileID: 8300000, guid: 21b5cb329e2b8e74d87b4d5db4a6d160,
     type: 3}
-  rootsThemeWin: {fileID: 8300000, guid: 12fb6577f7bda4e98a4d61e56e9354e5, type: 3}
-  rootsThemeLose: {fileID: 8300000, guid: 49162ec60739f40e1bd5f7b77684354a, type: 3}
-  drawClose: {fileID: 8300000, guid: c58562e8bf7eb45dabcd96fab41c0a81, type: 3}
-  drawOpen: {fileID: 8300000, guid: 81e5d34491fb74b84ac77b80739b3acb, type: 3}
-  fireplace: {fileID: 8300000, guid: 9c6a41b2211514aa3a6b1bb485f1d238, type: 3}
-  walkCarpet: {fileID: 8300000, guid: 62a9e38ad707c4ec8acb66ebc177fe3c, type: 3}
-  walkWood: {fileID: 8300000, guid: a6d3fb9ea35544455b254cb28994cda1, type: 3}
-  easterEgg: {fileID: 8300000, guid: 5b5376ae0fb994b3686545f6c42843ea, type: 3}
+  rootsThemeWin: {fileID: 8300000, guid: acd9d9cf4267d4849a695aa256293b9e, type: 3}
+  rootsThemeLose: {fileID: 8300000, guid: 15dabe3822fc6da49b11ff4b9b1b786d, type: 3}
+  drawClose: {fileID: 8300000, guid: 813a68ad2a7d3f543aaf7395b0255b58, type: 3}
+  drawOpen: {fileID: 8300000, guid: 4af119251b0b59d468b90e28c5872c98, type: 3}
+  fireplace: {fileID: 8300000, guid: 520bd4f95f05f544ead708aac9c85723, type: 3}
+  walkCarpet: {fileID: 8300000, guid: cf8ae2ee3143ab9458f00f4ce70b610d, type: 3}
+  walkWood: {fileID: 8300000, guid: f365f65a1afb0234d87590a46c9e2243, type: 3}
+  easterEgg: {fileID: 8300000, guid: 166f85c930924364a8fad0d910cb9689, type: 3}
   gramophoneAudioSource: {fileID: 1049564751}
   inspectorAudioSource: {fileID: 1049564751}
   soundEffectSource: {fileID: 463780314}
@@ -379,7 +379,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e3e9a08943e48c7449c4de39c5c1bf76, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8063,6 +8063,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834381605500023263, guid: 6474570dd9485d7489ea4a4f8866dde0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834381605500023263, guid: 6474570dd9485d7489ea4a4f8866dde0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834381605500023263, guid: 6474570dd9485d7489ea4a4f8866dde0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7834381605500023263, guid: 6474570dd9485d7489ea4a4f8866dde0,
         type: 3}

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f6f186060dac4b53bea638749677549, type: 3}
-  m_Name: Test Clue 6
+  m_Name: C4-Pocket Watch
   m_EditorClassIdentifier: 
-  name: Test Clue 6
-  clue: Rootin' Tootin'
-  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  name: Pocket Watch
+  clue: Wears a pocket watch.
+  mesh: {fileID: 1881002531211983626, guid: 500655afa5d54784ebcf18b356124c8e, type: 3}
+  material: {fileID: 2100000, guid: 30034706b7ee24f42b424a9979803f3a, type: 2}
   isFound: 0

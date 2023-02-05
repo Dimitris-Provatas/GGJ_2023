@@ -98,7 +98,7 @@ public class FPSController : MonoBehaviour
     // Move the controller
     characterController.Move(moveDirection * Time.deltaTime);
 
-    if (canMove && moveDirection != Vector3.zero)
+    if (canMove && Mathf.Abs(moveDirection.x) > 0.0001f && Mathf.Abs(moveDirection.z) > 0.0001f)
     {
       Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Vector3.down, out RaycastHit hitData, 2f, groundLayersMask);
 

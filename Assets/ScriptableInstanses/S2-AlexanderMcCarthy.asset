@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26382177d406d4295a5c32d49b0289b9, type: 3}
-  m_Name: Test Suspect 4
+  m_Name: S2-AlexanderMcCarthy
   m_EditorClassIdentifier: 
-  name: Test Suspect 4
-  sprite: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
+  name: Alexander McCarthy
+  sprite: {fileID: 21300000, guid: f774e85a64175664387fb682e7512d17, type: 3}
   clues:
   - {fileID: 11400000, guid: d5299602adb734cb89b10a758054848d, type: 2}
+  - {fileID: 11400000, guid: c920772b3db7af44bab68eed49285efd, type: 2}
+  - {fileID: 11400000, guid: 8e0cd5b8df00e1b49b8318c2890a1cf2, type: 2}
+  - {fileID: 11400000, guid: a81ebbc156bd3214b8a1f8a72f2d38a1, type: 2}

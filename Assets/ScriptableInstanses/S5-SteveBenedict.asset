@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26382177d406d4295a5c32d49b0289b9, type: 3}
-  m_Name: Test Suspect 2
+  m_Name: S5-SteveBenedict
   m_EditorClassIdentifier: 
-  name: Test Suspect 2
-  sprite: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
+  name: Steve Benedict
+  sprite: {fileID: 21300000, guid: 4eeb0e4af103b99489a0dc98e53c2a92, type: 3}
   clues:
   - {fileID: 11400000, guid: d5299602adb734cb89b10a758054848d, type: 2}
+  - {fileID: 11400000, guid: c920772b3db7af44bab68eed49285efd, type: 2}
+  - {fileID: 11400000, guid: a81ebbc156bd3214b8a1f8a72f2d38a1, type: 2}
+  - {fileID: 11400000, guid: 14ae1a909eed8464fb2e51680de0e64b, type: 2}
