@@ -1240,26 +1240,6 @@ PrefabInstance:
       propertyPath: pickedupClueTooltipAnimator
       value: 
       objectReference: {fileID: 31768710}
-    - target: {fileID: 4217961518191298356, guid: cb38f5979a3044045b92f2153dc04cf1,
-        type: 3}
-      propertyPath: field of view
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217961518191298356, guid: cb38f5979a3044045b92f2153dc04cf1,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 823
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217961518191298358, guid: cb38f5979a3044045b92f2153dc04cf1,
-        type: 3}
-      propertyPath: TAAQuality
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217961518191298358, guid: cb38f5979a3044045b92f2153dc04cf1,
-        type: 3}
-      propertyPath: antialiasing
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4217961518763991400, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
       propertyPath: m_Name
@@ -1325,11 +1305,6 @@ PrefabInstance:
       propertyPath: inventoryCamera
       value: 
       objectReference: {fileID: 930051469}
-    - target: {fileID: 4217961518763991403, guid: cb38f5979a3044045b92f2153dc04cf1,
-        type: 3}
-      propertyPath: groundLayers.m_Bits
-      value: 119
-      objectReference: {fileID: 0}
     - target: {fileID: 7921090171599907537, guid: cb38f5979a3044045b92f2153dc04cf1,
         type: 3}
       propertyPath: journalPanel
@@ -5180,7 +5155,7 @@ GameObject:
   - component: {fileID: 1780713115}
   - component: {fileID: 1780713114}
   - component: {fileID: 1780713113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

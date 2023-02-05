@@ -164,7 +164,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 823
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 90
   crouchingTransform: {fileID: 4217961519106473220}
-  groundLayers:
+  groundLayersMask:
     serializedVersion: 2
     m_Bits: 768
   canMove: 1
@@ -407,6 +407,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteInteractionTooltip: {fileID: 0}
   clueInteractionTooltip: {fileID: 0}
+  drawerInteractionTooltip: {fileID: 0}
+  decisionInteractionTooltip: {fileID: 0}
   pickedUpClueTooltip: {fileID: 0}
   pickedupClueTooltipAnimator: {fileID: 0}
 --- !u!114 &7921090171599907537
