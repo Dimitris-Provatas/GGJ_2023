@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,7 +14,7 @@ public class GameManager : MonoBehaviour
   public GameState currentGameState;
   public enum GameState { PLAYING, PAUSED, WON, LOST };
 
-  public TextMeshProUGUI pauseMenu;
+  public GameObject pauseMenu;
 
   // Singleton
   public static GameManager instance;
@@ -31,7 +29,7 @@ public class GameManager : MonoBehaviour
     currentGameState = GameState.PLAYING;
 
     // Remove Pause Label.
-    pauseMenu.enabled = false;
+    pauseMenu.SetActive(false);
 
     // Singleton
     instance = this;
@@ -57,7 +55,7 @@ public class GameManager : MonoBehaviour
     }
   }
 
-  private void SwitchPause()
+  public void SwitchPause()
   {
     // swap current game state.
     if (currentGameState == GameState.PLAYING)
@@ -65,15 +63,21 @@ public class GameManager : MonoBehaviour
     else if (currentGameState == GameState.PAUSED)
       currentGameState = GameState.PLAYING;
 
-    // The player will be able to look if the current game state is playing.
-    Time.timeScale = currentGameState == GameState.PLAYING ? 1f : 0f;
-    Cursor.visible = currentGameState == GameState.PAUSED;
-
     // Lock the look movement if the game is paused.
     FPSController.instance.canLook = currentGameState == GameState.PLAYING;
 
+    // The player will be able to look if the current game state is playing.
+    Time.timeScale = currentGameState == GameState.PLAYING ? 1f : 0f;
+    Cursor.visible = currentGameState == GameState.PAUSED;
+    Cursor.lockState = currentGameState == GameState.PAUSED ? CursorLockMode.None : CursorLockMode.Locked;
+
     // Show Paused if the game is paused.
-    pauseMenu.enabled = currentGameState == GameState.PAUSED;
+    pauseMenu.SetActive(currentGameState == GameState.PAUSED);
+  }
+
+  public void GoToMainMenu()
+  {
+    UnityEngine.SceneManagement.SceneManager.LoadScene(0);
   }
 
   public void TriggerLoseCondition()
