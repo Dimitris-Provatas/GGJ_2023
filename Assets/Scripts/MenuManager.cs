@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject options;
     public Resolution[] resolutions;
     public TMP_Dropdown resolutionDropdown;
+    public Slider volumeSlider;
 
     public int currentRes;
     public bool fullScreen;
@@ -72,59 +73,26 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void NextRes()
+    public void ToggleFullscreen()
     {
-        if (currentRes + 1 >= resolutions.Length)
-        {
-            currentRes = 0;
-        }
+        Screen.fullScreen = !Screen.fullScreen;
+    }
+
+    public void ToggleVSync()
+    {
+        if (QualitySettings.vSyncCount == 0)
+            QualitySettings.vSyncCount = 1;
         else
-        {
-            currentRes++;
-        }
-
-        GameObject.Find("Resolution").GetComponent<Text>().text = "Resolution: " + resolutions[currentRes].ToString();
-    }
-
-    public void PrevRes()
-    {
-        if (currentRes - 1 < 0)
-        {
-            currentRes = resolutions.Length - 1;
-        }
-        else
-        {
-            currentRes++;
-        }
-
-        GameObject.Find("Resolution").GetComponent<Text>().text = "Resolution: " + resolutions[currentRes].ToString();
-    }
-    public void FullscreenTrue()
-    {
-        fullScreen = true;
-        GameObject.Find("Fullscreen").GetComponent<Text>().text = "Fullscreen: On";
-    }
-
-    public void FullscreenFalse()
-    {
-        fullScreen = false;
-        GameObject.Find("Fullscreen").GetComponent<Text>().text = "Fullscreen: Off";
-    }
-
-    public void vSyncOn()
-    {
-        QualitySettings.vSyncCount = 1;
-        GameObject.Find("VSync").GetComponent<Text>().text = "VSync: On";
-    }
-
-    public void vSyncOff()
-    {
-        QualitySettings.vSyncCount = 0;
-        GameObject.Find("VSync").GetComponent<Text>().text = "VSync: Off";
+            QualitySettings.vSyncCount = 0;
     }
 
     public void ApplySettings()
     {
         Screen.SetResolution(resolutions[currentRes].width, resolutions[currentRes].height, fullScreen);
+    }
+
+    public void Update()
+    {
+        AudioListener.volume = volumeSlider.value;
     }
 }

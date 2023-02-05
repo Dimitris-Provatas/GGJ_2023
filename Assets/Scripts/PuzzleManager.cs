@@ -8,6 +8,7 @@ public class PuzzleManager : MonoBehaviour
 {
     [Header("Suspects & Clues")]
     public Clue[] inventory;
+    public Suspect[] allSuspects;
     public Suspect suspectCorrect;
     public Suspect suspectSelected;
 
@@ -25,11 +26,7 @@ public class PuzzleManager : MonoBehaviour
     private void Start()
     {
         instance = this;
-    }
-
-    public void ChangeCameras()
-    {
-        //fpsCamera.enabled = !treeCamera.enabled;
+        suspectCorrect = allSuspects[Random.Range(0, allSuspects.Length)];
     }
 
     public void ToggleInteract()
@@ -48,6 +45,8 @@ public class PuzzleManager : MonoBehaviour
             statusText.text = "Can't choose a suspect just yet. I need to find more clues.";
         else
             statusText.text = "Who can it be now?";
+
+        buttons.SetActive(false);
     }
 
     public bool AllCluesAreCorrect()

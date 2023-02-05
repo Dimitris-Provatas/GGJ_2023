@@ -34,7 +34,7 @@ public class JournalController : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetKeyUp(KeyCode.Tab))
+    if (Input.GetKeyUp(KeyCode.Tab) && !PuzzleManager.instance.panel.activeInHierarchy)
     {
       ToggleJournalPanel();
     }

@@ -9,6 +9,8 @@ public class InteractController : MonoBehaviour
 
     public GameObject noteInteractionTooltip;
     public GameObject clueInteractionTooltip;
+    public GameObject drawerInteractionTooltip;
+    public GameObject decisionInteractionTooltip;
 
     public TextMeshProUGUI pickedUpClueTooltip;
     public Animator pickedupClueTooltipAnimator;
@@ -17,7 +19,6 @@ public class InteractController : MonoBehaviour
     private bool lookingAtDrawer = false;
     private bool lookingAtDecision = false;
     private bool hasOpenedNote = false;
-
 
     private void Update()
     {
@@ -33,6 +34,8 @@ public class InteractController : MonoBehaviour
 
         noteInteractionTooltip.SetActive(lookingAtNote);
         clueInteractionTooltip.SetActive(lookingAtClue);
+        drawerInteractionTooltip.SetActive(lookingAtDrawer);
+        decisionInteractionTooltip.SetActive(lookingAtDecision);
 
         if (Input.GetKeyUp(KeyCode.F))
         {
