@@ -32,6 +32,7 @@ This project was made in the [Athens](http://globalgamejamathens.gr/) site of [G
 + **Artists:** Vicky Sakellakou, Nikos Tziotis, Rhea Zarkadoula
 + **Game & Level Design:** [Nikolas Joukowski](https://github.com/Nickzouk)
 + **Music & Sound Design:** [Nikolas Platon](https://soundcloud.com/platon-music/)
++ Special Thanks to [Haris Labros](https://www.artstation.com/clampros) for additional art.
 
 External Assets Used:
 
